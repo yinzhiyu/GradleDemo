@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="自定义View展示页"
+        android:textColor="#FF0000" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="reset" />
+
+    <!--<com.example.yinzhiyu.butterknifedemo.diyview.TrainDemoCircle-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="@color/blue"-->
+    <!--app:default_size="200dp"-->
+    <!--app:diy_color="#FFFF00" />-->
+
+    <!--<com.example.yinzhiyu.butterknifedemo.diyview.TrainDrawLine-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="58dp" />-->
+
+    <com.example.yinzhiyu.butterknifedemo.diyview.TrainDrawPath
+        android:id="@+id/tdp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp" />
+
+    <com.example.yinzhiyu.butterknifedemo.diyview.MyView
+        android:id="@+id/mv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimaryDark">#303f9f</color>
+    <color name="colorAccent">#ff4081</color>
+    <color name="color_dddddd">#dddddd</color>
+
+    <!-- 红色字体颜色 -->
+    <color name="font_color_red">#e71e1e</color>
+    <!-- 蓝色字体颜色 -->
+    <color name="font_color_blue">#2b88e7</color>
+    <color name="color_4b6491">#4b6491</color>
+    <color name="color_222222">#222222</color>
+    <color name="color_aaaaaa">#aaaaaa</color>
+    <color name="color_e65d4a">#e65d4a</color>
+    <color name="color_00c480">#00c480</color>
+    <color name="color_fffef3">#fffef3</color>
+    <color name="color_d0021b">#d0021b</color>
+    <color name="color_f49c0a">#f49c0a</color>
+    <color name="color_fd9220">#fd9220</color>
+    <color name="color_f8f8f8">#f8f8f8</color>
+    <color name="color_8e8e93">#8e8e93</color>
+    <color name="color_2b8e8e93">#2b8e8e93</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_FFFFFF">#FFFFFF</color>
+    <color name="color_B2B2B2">#B2B2B2</color>
+    <color name="color_DDDDDD">#DDDDDD</color>
+
+    <color name="reserve_line">#2b88e7</color>
+    <color name="blue2">#333333</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="white2">#f5f3f3</color>
+    <color name="colorRed">#d50f09</color>
+</resources>

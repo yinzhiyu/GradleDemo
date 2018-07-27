@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tc="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <Button
+        android:id="@+id/btn_basic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="basic" />
+
+    <Button
+        android:id="@+id/btn_easy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Easy" />
+
+    <Button
+        android:id="@+id/btn_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="RecyclerView" />
+
+    <com.example.yinzhiyu.butterknifedemo.diyview.CompletedView
+        android:id="@+id/tasks_view"
+        android:layout_width="223dp"
+        android:layout_height="223dp"
+        tc:circleColor="@color/color_00c480"
+        tc:radius="50dip"
+        tc:ringBgColor="@color/font_color_blue"
+        tc:ringColor="@color/colorRed"
+        tc:strokeWidth="10dip" />
+</LinearLayout>

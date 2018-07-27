@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eeeeee" >
+
+    <ImageButton
+        android:id="@+id/urm_back_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:background="@null"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/switch02" />
+
+    <LinearLayout
+        android:id="@+id/urm_top_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/urm_top_tv"
+            style="@style/main_tv_style"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="企业客户" />
+
+        <ImageView
+            android:id="@+id/urm_top_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@null"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/switch02" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/urm_top_right_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true" >
+
+        <ImageButton
+            android:id="@+id/urm_create_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/btn_add_2x" />
+
+        <Button
+            android:id="@+id/urm_confirm_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:padding="10dp"
+            android:text="确定"
+            android:textColor="@color/blue2"
+            android:textSize="18sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/urm_search_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/urm_top_right_rl"
+        android:background="@null"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/search"
+        android:visibility="gone" />
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@mipmap/pop_bg"
+        android:paddingTop="25dp"
+        android:paddingLeft="20dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1,this is tip1别的标点符号豆腐干豆腐干士大夫灌水灌水将顾客顾客投诉投入人挤人挤死人就"
+            android:textColor="@android:color/white"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2,this is tip2"
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/white"
+            />
+    </LinearLayout>
+</LinearLayout>

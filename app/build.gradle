@@ -1,0 +1,126 @@
+apply plugin: 'com.android.application'
+
+def cfg = rootProject.ext.android
+def librarys = rootProject.ext.dependencies
+def url = rootProject.ext.url
+def keystoreProperties = new Properties()
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+//设置时间
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyy-MM-dd', TimeZone.getTimeZone("UTC"))
+    return formattedDate
+}
+
+android {
+    //设置签名信息
+    signingConfigs {
+        config {
+            keyAlias 'rose'
+            keyPassword 'Qweasd123'
+            storeFile file('E:/AppKeyStore/ButterKnifeDemo.jks')
+            storePassword 'Qweasd123'
+        }
+    }
+    compileSdkVersion cfg.compileSdkVersion
+//    buildToolsVersion cfg.buildToolsVersion
+//    dexOptions {
+//        jumboMode = true
+//    }
+    defaultConfig {
+        applicationId "com.example.yinzhiyu.butterknifedemo"
+        minSdkVersion cfg.minSdkVersion
+        targetSdkVersion cfg.targetSdkVersion
+        versionName cfg.versionName
+        versionCode cfg.versionCode
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            buildConfigField "String", "AlphaUrl", "\"${url["release"]}\""
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+            //多版本打包
+
+            //批量修改生成的apk文件名
+            applicationVariants.all { variant ->
+                variant.outputs.all { output ->
+                    if (!variant.buildType.isDebuggable()) {
+                        def outputFile = output.outputFile
+//                        if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为AppName_time_channel.apk
+//                            def apkFile = "AppName_v${defaultConfig.versionName}_${buildTime()}" +
+//                                    "_${variant.productFlavors[0].name}.apk"
+//                        output.outputFile = new File(outputFile.parent, apkFile)
+                        def sourceFile = "-${defaultConfig.versionName}-${buildTime()}-${variant.productFlavors[0].name}"
+                        def replaceFile = "AppName_v${defaultConfig.versionName}_${buildTime()}" +
+                                "_${variant.productFlavors[0].name}.apk"
+                        outputFileName = output.outputFile.name.replace(sourceFile, replaceFile);
+//                        }
+                    }
+                }
+            }
+        }
+
+        debug {
+            minifyEnabled true
+            shrinkResources true
+            debuggable true
+            buildConfigField "String", "AlphaUrl", "\"${url["debug"]}\""
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+    //友盟多渠道打包
+    flavorDimensions "Yin"
+    productFlavors {
+        wandoujia {
+            versionName = project.VERSION_NAME
+            dimension "Yin"
+        }
+        _360 {
+            dimension "Yin"
+        }
+        huawei {
+            dimension "Yin"
+        }
+        xiaomi {
+            dimension "Yin"
+        }
+        meizu {
+            dimension "Yin"
+        }
+        vivo {
+            dimension "Yin"
+        }
+    }
+
+    productFlavors.all { flavor ->
+        manifestPlaceholders.put("UMENG_CHANNEL_VALUE", name)
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
+    //我填的测试代码
+    //    compile librarys["appcompatV7"]
+    //    compile librarys["cardview"]
+    //    compile librarys["recycleview"]
+    //    compile librarys["constraintlayout"]
+    //    compile librarys["butterknife"]
+    librarys.each { k, v -> compile v }
+}

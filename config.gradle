@@ -1,0 +1,47 @@
+ext {
+
+    //  各个组件版本号的统一管理
+    android = [
+            compileSdkVersion: 26,
+//            buildToolsVersion: "26.0.2",
+            minSdkVersion    : 16,
+            targetSdkVersion : 26,
+            versionCode      : Integer.parseInt(project.VERSION_CODE),
+            versionName      : project.VERSION_NAME,
+    ]
+    url = [
+            "debug"  : "debugUrl1",
+            //"debug"  : "debugUrl2",
+            //"debug"  : "debugUrl3",
+            "release": "releaseUrl1",
+            // "release": "releaseUrl2"
+    ]
+
+    libsVersion = [
+            // 第三方库版本号的管理
+            supportLibraryVersion = "26.1.0",
+            constraintlayout = "1.0.2",
+            recyclerview = "26.1.0",
+            cardview = "26.1.0",
+            butterknife = "8.8.1",
+            ffmpeg = "1.0.1",
+            EasyPopup = "1.0.2",
+            utilcode = "1.8.1",
+            BaseRecyclerViewAdapterHelper = "2.9.26",
+            kotlin = "1.1.4-3"
+    ]
+//  依赖库管理 compile "com.facebook.react:react-native:+"
+    dependencies = [
+            "appcompatV7"                  : "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion",
+            "cardview"                     : "com.android.support:cardview-v7:$rootProject.cardview",
+            "recycleview"                  : "com.android.support:recyclerview-v7:$rootProject.recyclerview",
+            "constraintlayout"             : "com.android.support.constraint:constraint-layout:$rootProject.constraintlayout",
+            "butterknife"                  : "com.jakewharton:butterknife:$rootProject.butterknife",
+            "ffmpeg"                       : "com.moushao.tech:ffmpeg-4-android:$rootProject.ffmpeg",
+            "EasyPopup"                    : "com.github.zyyoona7:EasyPopup:$rootProject.EasyPopup",
+            "utilcode"                     : "com.blankj:utilcode:$rootProject.utilcode",
+            "BaseRecyclerViewAdapterHelper": "com.github.CymChad:BaseRecyclerViewAdapterHelper:$rootProject.BaseRecyclerViewAdapterHelper",
+            "kotlin"                       : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$rootProject.kotlin",
+    ]
+
+}
